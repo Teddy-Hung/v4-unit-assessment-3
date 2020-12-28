@@ -25,7 +25,7 @@ export default class SearchBar extends Component{
 
     render(){
         return(
-            <div>
+            <div class= 'SearchRow'>
                 <input value= {this.state.userInput} id= 'search-bar' onChange= {(e) => this.handleChange(e.target.value)}></input>
                 <button id= 'search'>Search</button>
                 <button id= 'clear-search' onClick= {this.handleClear}>Clear Search</button>
