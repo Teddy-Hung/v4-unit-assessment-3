@@ -1,25 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+/*Unit Assessment 3 React - Bookist*/
+import react, {Component} from 'react'
+import './App.css'
+import './data'
+import Header from './Header'
+import SearchBar from './SearchBar'
+import Shelf from './Shelf'
+import BookList from './BookList'
+import data from './data'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  constructor(){
+    super()
+
+    this.state={
+      books: data,
+      shelf: []
+    }
+  }
+
+  render(){
+    return (
+      <div className="App">
+        <Header/>
+        <SearchBar/>
+        <section class= 'Book-Shelf-FlexBox'>
+          <BookList books={this.state.books}/>  
+        </section>
+      </div>
+    )
+  }
+
 }
 
 export default App;
